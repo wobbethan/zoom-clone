@@ -21,13 +21,14 @@ import { LayoutList, User } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 import EndCallButton from "./EndCallButton";
 import Loader from "./Loader";
+import { useRouter } from "next/navigation";
 
 type CallLayoutType = "grid" | "speaker-left" | "speaker-right";
 
 const MeetingRoom = () => {
   const searchParams = useSearchParams();
   const isPersonalRoom = !!searchParams.get("personal");
-
+  const router = useRouter();
   const [layout, setLayout] = useState<CallLayoutType>("speaker-left");
   const [showParticipants, setShowParticipants] = useState(false);
   const { useCallCallingState } = useCallStateHooks();
@@ -91,7 +92,7 @@ const MeetingRoom = () => {
             <User size={20} className="text-white" />
           </div>
         </button>
-        <CallControls />
+        <CallControls onLeave={() => router.push("/")} />
         {!isPersonalRoom && <EndCallButton />}
       </div>
     </section>
