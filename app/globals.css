@@ -80,7 +80,12 @@
 .cl-providerIcon__github {
   filter: invert(1);
 }
-
+.cl-navbarButton {
+  @apply text-white;
+}
+.cl-navbarButton .cl-active {
+  @apply text-blue-400;
+}
 /* =============================== */
 
 @layer utilities {
