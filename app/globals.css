@@ -81,10 +81,17 @@
   filter: invert(1);
 }
 .cl-navbarButton {
-  @apply text-white;
+  @apply text-white hover:bg-dark-3;
 }
-.cl-navbarButton .cl-active {
-  @apply text-blue-400;
+.cl-active {
+  @apply text-blue-400 bg-dark-3;
+}
+.cl-userButtonPopoverActionButton:hover {
+  color: white;
+  @apply bg-dark-3;
+}
+.cl-badge {
+  @apply bg-dark-4 text-blue-400;
 }
 /* =============================== */
 
